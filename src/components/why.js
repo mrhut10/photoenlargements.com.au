@@ -1,6 +1,8 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Image from 'gatsby-image';
 import React from 'react';
+
+import ButtonLink from './button-link';
 
 const Why = () => {
   const data = useStaticQuery(graphql`
@@ -36,13 +38,8 @@ const Why = () => {
           <p className="font-bold">
             Want larger prints? Click below for a quote!
           </p>
-          <p>
-            <Link
-              to="/contact-us"
-              className="bg-gold font-display inline-block mt-6 py-2 px-6 rounded text-black"
-            >
-              Get Quote Now
-            </Link>
+          <p className="mt-6">
+            <ButtonLink to="/contact-us" text="Get Quote Now" size="medium" />
           </p>
         </div>
         <div className="w-full md:w-1/2">
