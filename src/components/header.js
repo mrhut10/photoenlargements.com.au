@@ -26,9 +26,7 @@ const Header = () => {
               { title: 'Contact Us', route: '/contact-us' },
             ].map(navigationItem => (
               <li key={navigationItem.title}>
-                <Link to={navigationItem.route}>
-                  <a className="block px-2">{navigationItem.title}</a>
-                </Link>
+                <Link to={navigationItem.route}>{navigationItem.title}</Link>
               </li>
             ))}
           </ul>
