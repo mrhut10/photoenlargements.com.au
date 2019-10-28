@@ -21,10 +21,7 @@ const Hero = () => {
   `);
   return (
     <article className="relative">
-      <Image
-        fluid={data.file.childImageSharp.fluid}
-        style={{ maxHeight: `100vh` }}
-      />
+      <Image fluid={data.file.childImageSharp.fluid} className="h-screen" />
       <div className="absolute bg-transparent-black inset-0">
         <Header />
       </div>
@@ -42,7 +39,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <div className="absolute bottom-0 flex inset-x-0 justify-center mb-12 pointer-events-none text-white">
+      <div className="absolute bottom-0 flex inset-x-0 justify-center my-12 pointer-events-none text-white">
         <AnchorLink href="#why" className="pointer-events-auto text-6xl">
           <MdExpandMore />
         </AnchorLink>
