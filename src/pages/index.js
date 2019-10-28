@@ -1,22 +1,13 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
+import Why from '../components/why';
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1 className="font-bold text-4xl text-gray-800">Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div className="max-w-xs mb-6">
-      <Image />
-    </div>
-    <Link to="/page-2/" className="highlight">
-      Go to page 2
-    </Link>
+  <Layout home>
+    <SEO title="Photo Enlargements | Scrapbooks | Canvas" />
+    <Why />
   </Layout>
 );
 

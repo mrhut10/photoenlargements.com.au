@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
-    description: `Gatsby starter styled with Tailwind.`,
-    author: `@luke_bennett_`,
-    siteUrl: `https://gatsby-starter-tailwindcss.netlify.com`,
+    title: `PhotoEnlargements.com.au`,
+    description: `The Cheapest Photo Enlargements in Australia. Contact us today for all your photo printing needs.`,
+    author: `Photo Enlargements`,
+    siteUrl: `https://www.photoenlargements.com.au`,
   },
   plugins: [
     `gatsby-plugin-netlify`,
@@ -13,12 +13,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-canonical-urls`,
-    //   options: {
-    //     siteUrl: `https://www.lukebennett.com.au`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.photoenlargements.com.au`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

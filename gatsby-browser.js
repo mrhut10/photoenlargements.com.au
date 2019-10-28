@@ -7,3 +7,5 @@
 require('./src/css/tailwind.css');
 
 // Self host fonts using Typefaces.js https://github.com/KyleAMathews/typefaces
+
+require('typeface-montserrat');

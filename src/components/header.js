@@ -1,66 +1,49 @@
-import React, { useState } from 'react';
-import ReactModal from 'react-modal';
-import { Link, navigate } from 'gatsby';
-import PropTypes from 'prop-types';
+import { FiSearch } from 'react-icons/fi';
+import { Link } from 'gatsby';
+import { MdShoppingCart } from 'react-icons/md';
+import React from 'react';
 
-const Header = ({ siteTitle }) => {
-  const [isOpen, toggleOpen] = useState(false);
+const Header = () => {
   return (
-    <header className="bg-teal-600 mb-6 text-white w-screen">
-      <div className="flex items-center justify-between mx-auto max-w-4xl px-4 py-6">
-        <h1 className="font-bold text-4xl">
-          <Link to="/">{siteTitle}</Link>
-        </h1>
-        <button
-          onClick={() => toggleOpen(!isOpen)}
-          type="button"
-          className="border border-white font-semibold inline-block leading-none px-3 py-2 relative text-sm tracking-wide uppercase z-50"
-        >
-          Menu
-        </button>
-        <ReactModal
-          isOpen={isOpen}
-          contentLabel="Site navigation"
-          className="bg-teal-600 flex inset-0 items-center justify-center h-full text-white text-3xl"
-        >
-          <nav>
-            <ul>
-              <li>
-                <button
-                  onClick={() => {
-                    toggleOpen(false);
-                    navigate('/');
-                  }}
-                  type="button"
-                >
-                  Home
-                </button>
+    <header className="text-white w-screen">
+      <div className="flex font-display items-center justify-between mx-auto max-w-6xl px-4 py-2">
+        <nav className="flex items-baseline">
+          <Link
+            to="/"
+            className="border-2 border-white px-2 py-1 text-2xl tracking-tighter"
+          >
+            <span>Photo</span>
+            <span className="font-bold">Enlargements</span>
+            <span className="text-sm">.com.au</span>
+          </Link>
+          <ul className="flex mx-2 text-sm tracking-wider uppercase">
+            {[
+              { title: 'Home', route: '/' },
+              { title: 'Services', route: '/services' },
+              { title: 'Shop', route: '/shop' },
+              { title: 'Price Chart', route: '/price-chart' },
+              { title: 'Gallery', route: '/gallery' },
+              { title: 'Contact Us', route: '/contact-us' },
+            ].map(navigationItem => (
+              <li key={navigationItem.title}>
+                <Link to={navigationItem.route}>
+                  <a className="block px-2">{navigationItem.title}</a>
+                </Link>
               </li>
-              <li>
-                <button
-                  onClick={() => {
-                    toggleOpen(false);
-                    navigate('/page-2');
-                  }}
-                  type="button"
-                >
-                  Page 2
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </ReactModal>
+            ))}
+          </ul>
+        </nav>
+        <nav className="flex -mx-2">
+          <Link to="/search" className="px-2">
+            <FiSearch />
+          </Link>
+          <Link to="/cart" className="px-2">
+            <MdShoppingCart />
+          </Link>
+        </nav>
       </div>
     </header>
   );
-};
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
 };
 
 export default Header;
