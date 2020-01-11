@@ -4,7 +4,7 @@ const Testimonials = () => {
   return (
     <article
       id="testimonials"
-      className="py-6 mt-12 text-center text-black bg-gold"
+      className="px-10 py-6 mt-12 text-center text-black bg-gold"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold uppercase font-display">
