@@ -9,6 +9,8 @@ const useGraphqlQueries = () => {
             title
             description
             author
+            phone
+            googleMapsLink
           }
         }
         heroImage: file(name: { eq: "hero" }) {

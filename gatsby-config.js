@@ -16,6 +16,8 @@ module.exports = {
     description: `The Cheapest Photo Enlargements in Australia. Contact us today for all your photo printing needs.`,
     author: `Photo Enlargements`,
     siteUrl: `https://www.photoenlargements.com.au`,
+    phone: `0438 258 881`,
+    googleMapsLink: `https://goo.gl/maps/7x8C8LBjBQe9Lt4C7`,
   },
   plugins: [
     `gatsby-plugin-netlify`,
