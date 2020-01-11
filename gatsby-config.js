@@ -2,6 +2,14 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+
+// Import default theme from Tailwind so we can use colours for manifest
+const resolveConfig = require('tailwindcss/resolveConfig');
+const tailwindConfig = require('./tailwind.config');
+
+const tw = resolveConfig(tailwindConfig);
+
+// Gatsby settings
 module.exports = {
   siteMetadata: {
     title: `PhotoEnlargements.com.au`,
@@ -29,8 +37,8 @@ module.exports = {
         name: `gatsby-starter-tailwindcss`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#319795`,
+        background_color: tw.theme.colors.black,
+        theme_color: tw.theme.colors.gold,
         display: `minimal-ui`,
         icon: `src/images/logo.svg`, // This path is relative to the root of the site.
       },
