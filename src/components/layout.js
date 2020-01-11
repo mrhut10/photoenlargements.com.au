@@ -7,7 +7,7 @@ import Footer from './footer';
 
 const Layout = ({ children, home }) => {
   return (
-    <div className="antialiased flex flex-col font-sans min-h-screen text-gray-800">
+    <div className="flex flex-col min-h-screen font-sans antialiased text-gray-800">
       {home ? <Hero /> : <Header />}
       <main id="main" className="relative flex-1 bg-white">
         {children}
