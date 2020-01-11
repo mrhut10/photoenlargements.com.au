@@ -4,25 +4,15 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Image from 'gatsby-image';
 import React from 'react';
 
+import useGraphqlQueries from './use-graphql-queries';
 import Header from './header';
-import ButtonLink from './button-link';
 
 const Hero = () => {
-  const data = useStaticQuery(graphql`
-    {
-      file(name: { eq: "hero" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
+  const data = useGraphqlQueries();
   return (
-    <article className="relative">
-      <Image fluid={data.file.childImageSharp.fluid} className="h-screen" />
-      <div className="absolute bg-transparent-black inset-0">
+        <Image
+          fluid={data.heroImage.childImageSharp.fluid}
+          className="h-screen"
         <Header />
       </div>
       <div className="absolute flex font-bold font-display inset-0 items-center justify-center leading-tight pointer-events-none text-center text-white">
