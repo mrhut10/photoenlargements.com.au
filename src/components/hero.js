@@ -26,11 +26,9 @@ const Hero = () => {
             The Cheapest Photo Enlargements in Australia
           </h1>
           <p className="mt-6">
-            <ButtonLink
-              to="/store"
-              text="Get Started With Your Photo Enlargements"
-              size="large"
-            />
+            <Link to="/store" className="button button-large">
+              Get Started With Your Photo Enlargements
+            </Link>
           </p>
         </div>
       </div>
