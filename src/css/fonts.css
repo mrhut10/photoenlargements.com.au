@@ -1,16 +1,25 @@
 @font-face {
+  font-family: "Antonio";
+  src: url("/fonts/antonio-light-webfont.woff2") format("woff2"),
+    url("/fonts/antonio-light-webfont.woff") format("woff");
   font-display: swap;
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
+  font-family: "Antonio";
+  src: url("/fonts/antonio-regular-webfont.woff2") format("woff2"),
+    url("/fonts/antonio-regular-webfont.woff") format("woff");
   font-display: swap;
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
+  font-family: "Antonio";
+  src: url("/fonts/antonio-bold-webfont.woff2") format("woff2"),
+    url("/fonts/antonio-bold-webfont.woff") format("woff");
   font-display: swap;
   font-weight: 700;
   font-style: normal;
