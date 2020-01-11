@@ -9,7 +9,7 @@ const Layout = ({ children, home }) => {
   return (
     <div className="antialiased flex flex-col font-sans min-h-screen text-gray-800">
       {home ? <Hero /> : <Header />}
-      <main id="main" className="flex-1 px-4 pb-6 w-full">
+      <main id="main" className="relative flex-1 bg-white">
         {children}
       </main>
       <Footer />
