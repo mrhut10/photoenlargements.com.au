@@ -40,7 +40,7 @@ module.exports = {
         background_color: tw.theme.colors.black,
         theme_color: tw.theme.colors.gold,
         display: `minimal-ui`,
-        icon: `src/images/logo.svg`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
       },
     },
     {
