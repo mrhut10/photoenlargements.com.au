@@ -2,6 +2,8 @@ import { Link } from 'gatsby';
 import { IoIosCart, IoIosSearch } from 'react-icons/io';
 import React from 'react';
 
+import navLinks from '../data/nav-links';
+
 const Header = () => {
   return (
     <header className="w-screen text-white">
@@ -16,14 +18,7 @@ const Header = () => {
             <span className="text-sm">.com.au</span>
           </Link>
           <ul className="flex mx-2 text-sm tracking-wider uppercase">
-            {[
-              { title: 'Home', route: '/' },
-              { title: 'Services', route: '/services' },
-              { title: 'Shop', route: '/shop' },
-              { title: 'Price Chart', route: '/price-chart' },
-              { title: 'Gallery', route: '/gallery' },
-              { title: 'Contact Us', route: '/contact-us' },
-            ].map(navigationItem => (
+            {navLinks.map(navigationItem => (
               <li key={navigationItem.title}>
                 <Link
                   to={navigationItem.route}
