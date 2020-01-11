@@ -6,6 +6,7 @@
   "author": "Luke Bennett <hello@lukebennett.com.au>",
   "dependencies": {
     "autoprefixer": "^9.7.3",
+    "dotenv": "^8.2.0",
     "gatsby": "^2.18.21",
     "gatsby-image": "^2.2.38",
     "gatsby-plugin-canonical-urls": "^2.1.19",
@@ -18,6 +19,7 @@
     "gatsby-plugin-sharp": "^2.3.13",
     "gatsby-plugin-sitemap": "^2.2.25",
     "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-shopify": "^3.0.40",
     "gatsby-transformer-sharp": "^2.3.12",
     "postcss-import": "^12.0.1",
     "prop-types": "^15.7.2",
@@ -26,7 +28,8 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.8.0",
-    "tailwindcss": "^1.1.4",
+    "shopify-buy": "^2.9.0",
+    "tailwindcss": "^1.2.0-canary.5",
     "typeface-montserrat": "^0.0.75"
   },
   "devDependencies": {
