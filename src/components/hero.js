@@ -10,9 +10,14 @@ import Header from './header';
 const Hero = () => {
   const data = useGraphqlQueries();
   return (
+    <article className="relative h-screen">
+      <div className="fixed inset-0">
         <Image
           fluid={data.heroImage.childImageSharp.fluid}
           className="h-screen"
+        />
+      </div>
+      <div className="absolute inset-0 bg-transparent-black">
         <Header />
       </div>
       <div className="absolute flex font-bold font-display inset-0 items-center justify-center leading-tight pointer-events-none text-center text-white">
