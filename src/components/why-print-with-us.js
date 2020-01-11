@@ -1,27 +1,19 @@
-import { graphql, useStaticQuery } from 'gatsby';
-import Image from 'gatsby-image';
 import React from 'react';
+import { Link } from 'gatsby';
+import Image from 'gatsby-image';
 
-import ButtonLink from './button-link';
+import useGraphqlQueries from './use-graphql-queries';
 
-const Why = () => {
-  const data = useStaticQuery(graphql`
-    {
-      file(name: { eq: "photo-pile" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
+const WhyPrintWithUs = () => {
+  const data = useGraphqlQueries();
   return (
-    <article id="why" className="leading-loose max-w-6xl mx-auto mt-12">
-      <div className="flex flex-wrap">
+    <article id="why-print-with-us" className="px-10 mt-12 leading-loose">
+      <div className="flex flex-wrap-reverse max-w-6xl mx-auto">
         <div className="w-full md:w-1/2">
-          <h2 className="font-bold text-3xl uppercase">Why print with us?</h2>
-          <ul className="list-disc ml-5">
+          <h2 className="mt-6 text-3xl font-bold uppercase">
+            Why print with us?
+          </h2>
+          <ul className="ml-5 list-disc">
             <li>You upload your files and fill in your details</li>
             <li>You ensure that the files are in the correct aspect ratio</li>
             <li>
@@ -39,15 +31,17 @@ const Why = () => {
             Want larger prints? Click below for a quote!
           </p>
           <p className="mt-6">
-            <ButtonLink to="/contact-us" text="Get Quote Now" size="medium" />
+            <Link to="/contact-us" className="button button-medium">
+              Get Quote Now
+            </Link>
           </p>
         </div>
         <div className="w-full md:w-1/2">
-          <Image fluid={data.file.childImageSharp.fluid} />
+          <Image fluid={data.photoPile.childImageSharp.fluid} />
         </div>
       </div>
     </article>
   );
 };
 
-export default Why;
+export default WhyPrintWithUs;
