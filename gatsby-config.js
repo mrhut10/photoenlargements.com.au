@@ -1,3 +1,7 @@
+// Load environment variables
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     title: `PhotoEnlargements.com.au`,
@@ -43,6 +47,15 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-shopify`,
+      options: {
+        shopName: process.env.SHOPIFY_SHOP_NAME,
+        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+        verbose: true,
+        paginationSize: 30,
       },
     },
   ],
