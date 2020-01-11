@@ -6,11 +6,11 @@
 }
 
 .button {
-  @apply py-2 px-6 bg-gold font-display inline-block rounded text-black;
+  @apply py-2 px-6 bg-gold font-display inline-block rounded text-black transition-colors duration-200 ease-in;
 }
 
 .button:hover {
-  @apply bg-gold-light;
+  @apply bg-gold-light shadow;
 }
 
 .button-medium {
