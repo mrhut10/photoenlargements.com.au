@@ -4,6 +4,8 @@ module.exports = {
       colors: {
         'transparent-black': 'hsla(0, 0%, 0%, 0.33)',
         gold: '#ffc600',
+        'gold-light': '#ffd545',
+        'gold-lightest': '#fff7b6',
       },
       fontFamily: {
         display: [
