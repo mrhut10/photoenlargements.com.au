@@ -5,6 +5,7 @@ import SEO from '../components/seo';
 import Why from '../components/why-print-with-us';
 import Banner from '../components/banner';
 import About from '../components/about';
+import Testimonials from '../components/testimonials';
 
 const IndexPage = () => (
   <Layout home>
@@ -12,6 +13,7 @@ const IndexPage = () => (
     <Why />
     <Banner>We offer a variety of enlargement sizes</Banner>
     <About />
+    <Testimonials />
   </Layout>
 );
 
