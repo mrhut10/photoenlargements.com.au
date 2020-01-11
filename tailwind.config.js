@@ -1,3 +1,5 @@
+const tw = require('tailwindcss/defaultConfig');
+
 module.exports = {
   theme: {
     extend: {
@@ -8,36 +10,11 @@ module.exports = {
         'gold-lightest': '#fff7b6',
       },
       fontFamily: {
-        display: [
-          'Antonio',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
-          '"Noto Sans"',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
-        sans: [
-          'Montserrat',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
-          '"Noto Sans"',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
+        display: ['Antonio', ...tw.theme.fontFamily.sans],
+        sans: ['Montserrat', ...tw.theme.fontFamily.sans],
+      },
+      zIndex: {
+        '-10': '-10',
       },
     },
   },
