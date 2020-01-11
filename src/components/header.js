@@ -5,12 +5,12 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="text-white w-screen">
-      <div className="flex font-display items-center justify-between mx-auto max-w-6xl px-4 py-2">
+    <header className="w-screen text-white">
+      <div className="flex items-center justify-between max-w-6xl px-4 py-2 mx-auto font-display">
         <nav className="flex items-baseline">
           <Link
             to="/"
-            className="border-2 border-white px-2 py-1 text-2xl tracking-tighter"
+            className="px-2 py-1 text-2xl tracking-tighter border-2 border-white"
           >
             <span>Photo</span>
             <span className="font-bold">Enlargements</span>
