@@ -33,7 +33,10 @@ const Hero = () => {
         </div>
       </div>
       <div className="absolute inset-x-0 bottom-0 flex justify-center my-12 text-white pointer-events-none">
-        <AnchorLink href="#why" className="text-6xl pointer-events-auto">
+        <AnchorLink
+          href="#why-print-with-us"
+          className="text-6xl pointer-events-auto"
+        >
           <MdExpandMore />
         </AnchorLink>
       </div>
