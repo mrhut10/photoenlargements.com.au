@@ -1,6 +1,5 @@
-import { FiSearch } from 'react-icons/fi';
 import { Link } from 'gatsby';
-import { MdShoppingCart } from 'react-icons/md';
+import { IoIosCart, IoIosSearch } from 'react-icons/io';
 import React from 'react';
 
 const Header = () => {
@@ -39,10 +38,10 @@ const Header = () => {
         </nav>
         <nav className="flex -mx-2">
           <Link to="/search" className="px-2">
-            <FiSearch />
+            <IoIosSearch />
           </Link>
           <Link to="/cart" className="px-2">
-            <MdShoppingCart />
+            <IoIosCart />
           </Link>
         </nav>
       </div>
