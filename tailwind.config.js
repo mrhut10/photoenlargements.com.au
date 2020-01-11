@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'transparent-black': 'hsla(0, 0%, 0%, 0.33)',
+        'transparent-white': 'hsla(0, 100%, 100%, 0.66)',
         gold: '#ffc600',
         'gold-light': '#ffd545',
         'gold-lightest': '#fff7b6',

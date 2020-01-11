@@ -28,7 +28,8 @@ const Header = () => {
               <li key={navigationItem.title}>
                 <Link
                   to={navigationItem.route}
-                  className="px-2 whitespace-no-wrap"
+                  activeClassName="text-transparent-white"
+                  className="px-2 whitespace-no-wrap transition-colors duration-200 ease-in hover:text-transparent-white"
                 >
                   {navigationItem.title}
                 </Link>
