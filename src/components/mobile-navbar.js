@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import MobileNavMenu from './mobile-nav-menu';
 
 const MobileNavbar = () => {
-  const [isNavOpen, setIsNavOpen] = React.useState(true);
+  const [isNavOpen, setIsNavOpen] = React.useState(false);
   return (
     <div className="sticky top-0 z-10 flex items-center h-10 px-6 text-white bg-black md:hidden font-display">
       <Link
