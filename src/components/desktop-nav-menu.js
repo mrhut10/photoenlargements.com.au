@@ -1,12 +1,13 @@
 import React from 'react';
 import { IoIosCart, IoIosSearch } from 'react-icons/io';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import navLinks from '../data/nav-links';
 
-const DesktopNavMenu = () => {
+const DesktopNavMenu = ({ home }) => {
   return (
-    <header className="w-screen text-white">
+    <header className={`${home ? '' : 'bg-black'} w-screen text-white`}>
       <div className="hidden px-10 py-4 md:block">
         <div className="flex items-center justify-between max-w-6xl mx-auto font-display">
           <nav className="flex items-baseline">
@@ -50,6 +51,10 @@ const DesktopNavMenu = () => {
       </div>
     </header>
   );
+};
+
+DesktopNavMenu.propTypes = {
+  home: PropTypes.bool,
 };
 
 export default DesktopNavMenu;
