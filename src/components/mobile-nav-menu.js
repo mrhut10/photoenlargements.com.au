@@ -1,26 +1,27 @@
 import React from 'react';
 import { IoIosMenu } from 'react-icons/io';
+import { animated, useSpring } from 'react-spring';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import navLinks from '../data/nav-links';
 
 const MobileNavMenu = ({ isNavOpen, setIsNavOpen }) => {
+  const props = useSpring({
+    transform: isNavOpen ? 'translate3d(0%, 0, 0)' : 'translate3d(-100%, 0, 0)',
+    config: { mass: 1, tension: 180, friction: 5, clamp: true },
+  });
   return (
-    <nav
+    <animated.nav
       className="fixed inset-y-0 left-0 z-10 w-64 text-white bg-black transition-transform duration-100 ease-in"
-      style={
-        isNavOpen
-          ? { transform: `translateX(0)` }
-          : { transform: `translateX(-100%)` }
-      }
+      style={props}
     >
       <div className="relative0">
         <button
           type="button"
           onClick={() => setIsNavOpen(!isNavOpen)}
           style={{ transform: `translateX(100%)` }}
-          className="absolute top-0 right-0 flex items-center h-10 px-2 bg-black transition-colors duration-200 ease-in hover:text-transparent-white"
+          className="absolute top-0 right-0 flex items-center h-10 px-2 bg-black"
         >
           <IoIosMenu className="text-3xl" />
           <span className="ml-1 text-xs tracking-wide uppercase">Menu</span>
@@ -51,7 +52,7 @@ const MobileNavMenu = ({ isNavOpen, setIsNavOpen }) => {
           ))}
         </ul>
       </div>
-    </nav>
+    </animated.nav>
   );
 };
 
