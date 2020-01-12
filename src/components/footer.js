@@ -10,10 +10,10 @@ const Footer = () => {
     <footer className="relative px-10 text-white bg-black">
       <div className="w-full max-w-6xl mx-auto mt-6 mb-12">
         <nav className="lg:items-baseline lg:justify-between lg:flex">
-          <Link to="/" className="text-5xl tracking-tighter font-display">
+          <Link to="/" className="text-4xl tracking-tighter font-display">
             <span>Photo</span>
             <span className="font-bold">Enlargements</span>
-            <span className="text-3xl">.com.au</span>
+            <span className="text-2xl">.com.au</span>
           </Link>
           <ul className="-mx-2 font-bold tracking-wider uppercase lg:flex font-display">
             {navLinks.map(navigationItem => (
