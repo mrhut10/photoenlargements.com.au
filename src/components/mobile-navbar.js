@@ -1,13 +1,29 @@
 import React from 'react';
-import { IoIosCart } from 'react-icons/io';
+import { IoIosCart, IoIosMenu } from 'react-icons/io';
+import { animated, useTransition } from 'react-spring';
 import { Link } from 'gatsby';
 
 import MobileNavMenu from './mobile-nav-menu';
 
 const MobileNavbar = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
+
+  const clickOutside = useTransition(isNavOpen, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+
   return (
     <div className="sticky top-0 z-10 flex items-center h-10 px-6 text-white bg-black md:hidden font-display">
+      <button
+        type="button"
+        onClick={() => setIsNavOpen(!isNavOpen)}
+        className="absolute top-0 left-0 flex items-center h-10 px-2 bg-black"
+      >
+        <IoIosMenu className="text-3xl" />
+        <span className="ml-1 text-xs tracking-wide uppercase">Menu</span>
+      </button>
       <Link
         to="/"
         className={`${
@@ -18,16 +34,21 @@ const MobileNavbar = () => {
         <span className="font-bold">Enlargements</span>
         <span className="text-xs">.com.au</span>
       </Link>
-      <button
-        type="button"
-        aria-label="Toggle site navigation menu."
-        aria-expanded={isNavOpen}
-        aria-controls="nav-menu"
-        onClick={() => setIsNavOpen(false)}
-        className={`${
-          isNavOpen ? 'fixed inset-0 bg-transparent-black' : 'hidden'
-        }`}
-      />
+      {clickOutside.map(
+        ({ item, key, props }) =>
+          item && (
+            <animated.button
+              key={key}
+              type="button"
+              aria-label="Toggle site navigation menu."
+              aria-expanded={isNavOpen}
+              aria-controls="nav-menu"
+              onClick={() => setIsNavOpen(false)}
+              style={props}
+              className="fixed inset-0 bg-transparent-black"
+            />
+          )
+      )}
       <MobileNavMenu isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       <Link
         to="/cart"
