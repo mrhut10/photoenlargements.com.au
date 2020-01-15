@@ -12,7 +12,7 @@ const tw = resolveConfig(tailwindConfig);
 // Gatsby settings
 module.exports = {
   siteMetadata: {
-    title: `PhotoEnlargements.com.au`,
+    title: `Photo Enlargements`,
     description: `The Cheapest Photo Enlargements in Australia. Contact us today for all your photo printing needs.`,
     author: `Photo Enlargements`,
     siteUrl: `https://www.photoenlargements.com.au`,

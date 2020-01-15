@@ -4,6 +4,7 @@ import Image from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const ProductTemplate = ({ data }) => {
   const { shopifyProduct: product } = data;
@@ -25,6 +26,7 @@ const ProductTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={product.title} />
       <div className="px-10">
         <div className="flex flex-wrap max-w-6xl mx-auto mt-24">
           <div className="w-full md:w-7/12">
