@@ -24,7 +24,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
   // The product "handle" is generated automatically by Shopify
   pages.data.allShopifyProduct.edges.forEach(({ node: { id, handle } }) => {
     createPage({
-      path: `/product/${handle}`,
+      path: `/products/${handle}`,
       component: path.resolve(`./src/templates/product.js`),
       context: {
         id,

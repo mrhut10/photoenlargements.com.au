@@ -21,7 +21,7 @@ const ProductsPage = ({ data }) => {
                 key={node.shopifyId}
                 className="w-full mt-12 leading-loose text-center md:w-1/3"
               >
-                <Link to={`/product/${node.handle}`}>
+                <Link to={`/products/${node.handle}`}>
                   <Image
                     fixed={node.images[0].localFile.childImageSharp.fixed}
                     imgStyle={{
