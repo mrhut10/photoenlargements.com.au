@@ -4,31 +4,17 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require(`path`);
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+const path = require('path');
+
+exports.createPages = async ({ graphql, actions: { createPage } }) => {
   // Query for all products in Shopify
-  const result = await graphql(`
-    query {
-      allShopifyProduct(sort: { fields: [title] }) {
+  const pages = await graphql(`
+    query PagesQuery {
+      allShopifyProduct {
         edges {
           node {
-            title
-            images {
-              originalSrc
-            }
-            shopifyId
+            id
             handle
-            description
-            availableForSale
-            priceRange {
-              maxVariantPrice {
-                amount
-              }
-              minVariantPrice {
-                amount
-              }
-            }
           }
         }
       }
@@ -36,12 +22,13 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
   // Iterate over all products and create a new page using a template
   // The product "handle" is generated automatically by Shopify
-  result.data.allShopifyProduct.edges.forEach(({ node }) => {
+  pages.data.allShopifyProduct.edges.forEach(({ node: { id, handle } }) => {
     createPage({
-      path: `/product/${node.handle}`,
+      path: `/product/${handle}`,
       component: path.resolve(`./src/templates/product.js`),
       context: {
-        product: node,
+        id,
+        handle,
       },
     });
   });
