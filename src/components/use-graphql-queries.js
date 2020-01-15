@@ -13,6 +13,21 @@ const useGraphqlQueries = () => {
             googleMapsLink
           }
         }
+        allShopifyProduct {
+          nodes {
+            images {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
+            title
+            id
+          }
+        }
         heroImage: file(name: { eq: "hero" }) {
           childImageSharp {
             fluid {
@@ -21,6 +36,20 @@ const useGraphqlQueries = () => {
           }
         }
         photoPile: file(name: { eq: "photo-pile" }) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        scrapbookPrinting: file(name: { eq: "scrapbook-printing" }) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        canvasPrinting: file(name: { eq: "canvas-printing" }) {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid_withWebp
