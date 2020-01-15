@@ -28,8 +28,21 @@ const ProductTemplate = ({ data }) => {
       <div className="px-10">
         <div className="flex flex-wrap max-w-6xl mx-auto mt-24">
           <div className="w-full md:w-7/12">
-            <div className="max-w-xs mx-auto">
-              <Image fluid={firstImage.localFile.childImageSharp.fluid} />
+            <div className="max-w-md mx-auto">
+              <div className="px-2">
+                <Image fluid={firstImage.localFile.childImageSharp.fluid} />
+              </div>
+              <div className="flex flex-wrap justify-center">
+                {product.images.length > 1 &&
+                  product.images.map(image => (
+                    <button type="button" className="w-1/5 px-2 mt-4">
+                      <Image
+                        fluid={image.localFile.childImageSharp.fluid}
+                        className="w-full"
+                      />
+                    </button>
+                  ))}
+              </div>
             </div>
           </div>
           <div className="w-full md:w-5/12">
@@ -105,6 +118,16 @@ export const query = graphql`
         price
         sku
         availableForSale
+        image {
+          id
+          localFile {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
       }
       images {
         id
