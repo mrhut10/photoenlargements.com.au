@@ -22,8 +22,6 @@ const ProductTemplate = ({ data }) => {
     setState(...newState);
   };
 
-  console.log(state);
-
   return (
     <Layout>
       <SEO title={product.title} />
