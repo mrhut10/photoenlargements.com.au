@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const PriceChart = () => {
   const data = useStaticQuery(graphql`
@@ -14,6 +15,7 @@ const PriceChart = () => {
   `);
   return (
     <Layout>
+      <SEO title={data.shopifyPage.title} />
       <div className="px-10">
         <div className="max-w-6xl mx-auto my-24">
           <h1 className="text-2xl font-bold text-center uppercase font-display">
