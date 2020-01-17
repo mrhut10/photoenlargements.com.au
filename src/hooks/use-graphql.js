@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-const useGraphqlQueries = () => {
+const useGraphql = () => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -63,4 +63,4 @@ const useGraphqlQueries = () => {
   return data;
 };
 
-export default useGraphqlQueries;
+export default useGraphql;

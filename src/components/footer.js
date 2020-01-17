@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import navLinks from '../data/nav-links';
-import useGraphqlQueries from './use-graphql-queries';
+import useGraphql from '../hooks/use-graphql';
 
 const Footer = () => {
-  const { site } = useGraphqlQueries();
+  const { site } = useGraphql();
   return (
     <footer className="relative px-10 text-white bg-black">
       <div className="w-full max-w-6xl mx-auto mt-6 mb-12">

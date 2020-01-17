@@ -1,10 +1,10 @@
 import React from 'react';
 
-import useGraphqlQueries from './use-graphql-queries';
+import useGraphql from '../hooks/use-graphql';
 import ContactForm from './form';
 
 const Contact = () => {
-  const { site } = useGraphqlQueries();
+  const { site } = useGraphql();
   return (
     <article className="px-10 py-6">
       <div className="max-w-6xl mx-auto">

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import useGraphqlQueries from './use-graphql-queries';
+import useGraphql from '../hooks/use-graphql';
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useGraphqlQueries();
+  const { site } = useGraphql();
 
   const metaDescription = description || site.siteMetadata.description;
 

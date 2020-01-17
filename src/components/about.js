@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'gatsby-image';
 
-import useGraphqlQueries from './use-graphql-queries';
+import useGraphql from '../hooks/use-graphql';
 
 const About = () => {
-  const data = useGraphqlQueries();
+  const data = useGraphql();
   return (
     <article id="about" className="px-10 mt-12 leading-loose">
       <div className="flex flex-wrap max-w-6xl mx-auto">

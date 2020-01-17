@@ -5,11 +5,11 @@ import Image from 'gatsby-image';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import useGraphqlQueries from './use-graphql-queries';
+import useGraphql from '../hooks/use-graphql';
 import DesktopNavMenu from './desktop-nav-menu';
 
 const Hero = ({ home = true }) => {
-  const data = useGraphqlQueries();
+  const data = useGraphql();
   return (
     <article className="relative h-screen">
       <div className="fixed inset-0">

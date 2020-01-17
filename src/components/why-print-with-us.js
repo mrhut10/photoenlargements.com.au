@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 
-import useGraphqlQueries from './use-graphql-queries';
+import useGraphql from '../hooks/use-graphql';
 
 const WhyPrintWithUs = () => {
-  const data = useGraphqlQueries();
+  const data = useGraphql();
   return (
     <article id="why-print-with-us" className="px-10 mt-12 leading-loose">
       <div className="flex flex-wrap-reverse max-w-6xl mx-auto">

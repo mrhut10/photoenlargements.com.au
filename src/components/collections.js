@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
 
-import useGraphqlQueries from './use-graphql-queries';
+import useGraphql from '../hooks/use-graphql';
 
 const Collections = () => {
-  const { scrapbookPrinting, canvasPrinting } = useGraphqlQueries();
+  const { scrapbookPrinting, canvasPrinting } = useGraphql();
   return (
     <div className="px-10 py-6 text-center">
       <div className="max-w-6xl mx-auto">
