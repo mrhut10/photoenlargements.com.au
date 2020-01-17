@@ -19,6 +19,9 @@ module.exports = {
       },
     },
   },
-  variants: { borderWidth: ['responsive', 'last', 'hover', 'focus'] },
+  variants: {
+    borderWidth: ['responsive', 'last', 'hover', 'focus'],
+    margin: ['responsive', 'first'],
+  },
   plugins: [],
 };
