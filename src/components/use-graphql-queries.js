@@ -9,6 +9,7 @@ const useGraphqlQueries = () => {
             title
             description
             author
+            address
             phone
             googleMapsLink
           }
