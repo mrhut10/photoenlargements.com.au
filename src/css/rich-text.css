@@ -149,3 +149,19 @@
 .rich-text pre code {
   @apply text-sm p-0;
 }
+
+.rich-text table {
+  @apply text-left border border-collapse border-gray-500;
+}
+
+.rich-text thead {
+  @apply bg-gray-100;
+}
+
+.rich-text th {
+  @apply px-4 py-2 border border-gray-400;
+}
+
+.rich-text td {
+  @apply px-4 py-2 border border-gray-400;
+}
