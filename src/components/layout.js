@@ -8,14 +8,17 @@ import Footer from './footer';
 
 const Layout = ({ children, home = false }) => {
   return (
-    <div className="relative flex flex-col w-full min-h-screen overflow-x-hidden font-sans antialiased text-gray-800">
+    <>
       <MobileNavbar />
-      {home ? <Hero home={home} /> : <DesktopNavMenu home={home} />}
-      <main id="main" className="relative flex-1 bg-white">
-        {children}
-      </main>
-      <Footer />
-    </div>
+      <DesktopNavMenu home={home} />
+      <div className="relative flex flex-col w-full min-h-screen overflow-x-hidden font-sans antialiased text-gray-800">
+        {home && <Hero />}
+        <main id="main" className="relative flex-1 bg-white">
+          {children}
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
