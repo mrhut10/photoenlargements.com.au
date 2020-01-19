@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import useGraphql from '../hooks/use-graphql';
 import DesktopNavMenu from './desktop-nav-menu';
 
-const Hero = ({ home = true }) => {
+const Hero = () => {
   const data = useGraphql();
   return (
     <article className="relative h-screen">
@@ -18,10 +18,7 @@ const Hero = ({ home = true }) => {
           className="h-screen"
         />
       </div>
-      <div className="absolute inset-0 bg-transparent-black">
-        <DesktopNavMenu home={home} />
-      </div>
-      <div className="absolute inset-0 flex items-center justify-center font-bold leading-tight text-center text-white pointer-events-none font-display">
+      <div className="absolute inset-0 flex items-center justify-center font-bold leading-tight text-center text-white pointer-events-none font-display bg-transparent-black">
         <div className="max-w-4xl px-4 pointer-events-auto">
           <h1 className="text-4xl md:text-6xl">
             The Cheapest Photo <br />
@@ -45,10 +42,6 @@ const Hero = ({ home = true }) => {
       </div>
     </article>
   );
-};
-
-Hero.propTypes = {
-  home: PropTypes.bool,
 };
 
 export default Hero;
