@@ -3,13 +3,23 @@ import { IoIosArrowDown } from 'react-icons/io';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Image from 'gatsby-image';
 import React from 'react';
-import PropTypes from 'prop-types';
+import resolveConfig from 'tailwindcss/resolveConfig';
 
+import tailwindConfig from '../../tailwind.config.js';
 import useGraphql from '../hooks/use-graphql';
-import DesktopNavMenu from './desktop-nav-menu';
+import useMediaQuery from '../hooks/use-media-query';
 
 const Hero = () => {
   const data = useGraphql();
+
+  const fullConfig = resolveConfig(tailwindConfig);
+
+  const screenSize = useMediaQuery(
+    `(min-width: ${fullConfig.theme.screens.md})`,
+    '48',
+    '88'
+  );
+
   return (
     <header className="relative h-screen">
       <div className="fixed inset-0">
@@ -34,7 +44,7 @@ const Hero = () => {
       <div className="absolute inset-x-0 bottom-0 flex justify-center my-12 text-white pointer-events-none">
         <AnchorLink
           href="#why-print-with-us"
-          offset="88"
+          offset={screenSize}
           className="text-6xl pointer-events-auto"
         >
           <IoIosArrowDown />
