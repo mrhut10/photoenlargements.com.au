@@ -11,7 +11,7 @@ import DesktopNavMenu from './desktop-nav-menu';
 const Hero = () => {
   const data = useGraphql();
   return (
-    <article className="relative h-screen">
+    <header className="relative h-screen">
       <div className="fixed inset-0">
         <Image
           fluid={data.heroImage.childImageSharp.fluid}
@@ -40,7 +40,7 @@ const Hero = () => {
           <IoIosArrowDown />
         </AnchorLink>
       </div>
-    </article>
+    </header>
   );
 };
 
