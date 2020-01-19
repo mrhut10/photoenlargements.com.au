@@ -21,7 +21,7 @@ const Hero = () => {
   );
 
   return (
-    <header className="relative min-h-screen">
+    <article className="relative min-h-screen">
       <div className="fixed inset-0">
         <Image
           fluid={data.heroImage.childImageSharp.fluid}
@@ -50,7 +50,7 @@ const Hero = () => {
           <IoIosArrowDown />
         </AnchorLink>
       </div>
-    </header>
+    </article>
   );
 };
 
