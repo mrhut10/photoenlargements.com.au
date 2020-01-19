@@ -21,11 +21,11 @@ const Hero = () => {
   );
 
   return (
-    <header className="relative h-screen">
+    <header className="relative min-h-screen">
       <div className="fixed inset-0">
         <Image
           fluid={data.heroImage.childImageSharp.fluid}
-          className="h-screen"
+          className="min-h-screen"
         />
       </div>
       <div className="absolute inset-0 flex items-center justify-center font-bold leading-tight text-center text-white pointer-events-none font-display bg-transparent-black">
