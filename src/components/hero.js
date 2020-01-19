@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import { MdExpandMore } from 'react-icons/md';
+import { IoIosArrowDown } from 'react-icons/io';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Image from 'gatsby-image';
 import React from 'react';
@@ -40,7 +40,7 @@ const Hero = ({ home = true }) => {
           offset="88"
           className="text-6xl pointer-events-auto"
         >
-          <MdExpandMore />
+          <IoIosArrowDown />
         </AnchorLink>
       </div>
     </article>
