@@ -13,7 +13,7 @@ const Collections = () => {
           Collection list
         </h2>
         <div className="flex flex-wrap mt-12 -mx-2">
-          <div className="relative w-1/2 px-2">
+          <div className="relative w-full px-2 mt-6 first:mt-0 md:w-1/2 md:mt-0">
             <Image
               fluid={scrapbookPrinting.childImageSharp.fluid}
               className="w-full"
@@ -27,7 +27,7 @@ const Collections = () => {
               </h3>
             </Link>
           </div>
-          <div className="relative w-1/2 px-2">
+          <div className="relative w-full px-2 mt-6 first:mt-0 md:w-1/2 md:mt-0">
             <Image
               fluid={canvasPrinting.childImageSharp.fluid}
               className="w-full"
