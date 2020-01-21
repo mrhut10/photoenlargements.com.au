@@ -16,7 +16,7 @@ const ProductsPage = ({ data }) => {
             Products
           </h1>
           <ul className="flex flex-wrap">
-            {data.allShopifyProduct.edges.map(({ node }) => (
+            {data.allShopifyProduct.nodes.map(node => (
               <li
                 key={node.shopifyId}
                 className="w-full mt-12 leading-loose text-center md:w-1/3"
@@ -56,23 +56,21 @@ export default ProductsPage;
 export const query = graphql`
   {
     allShopifyProduct(sort: { fields: [title] }) {
-      edges {
-        node {
-          title
-          shopifyId
-          description
-          handle
-          priceRange {
-            minVariantPrice {
-              amount
-            }
+      nodes {
+        title
+        shopifyId
+        description
+        handle
+        priceRange {
+          minVariantPrice {
+            amount
           }
-          images {
-            localFile {
-              childImageSharp {
-                fixed(height: 200) {
-                  ...GatsbyImageSharpFixed_withWebp
-                }
+        }
+        images {
+          localFile {
+            childImageSharp {
+              fixed(height: 200) {
+                ...GatsbyImageSharpFixed_withWebp
               }
             }
           }
