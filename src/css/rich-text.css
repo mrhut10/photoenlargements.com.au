@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 .rich-text h1 {
   @apply text-2xl font-bold text-center uppercase font-display leading-none;
 }
@@ -165,3 +166,4 @@
 .rich-text td {
   @apply px-4 py-2 border border-gray-400;
 }
+/* purgecss end ignore */
