@@ -10,7 +10,7 @@ const DesktopNavMenu = ({ home }) => {
     <header
       className={`${
         home ? 'absolute ' : 'bg-black sticky '
-      }w-screen text-white top-0 z-10`}
+      }w-full text-white top-0 z-10`}
     >
       <div className="hidden px-10 py-4 md:block">
         <div className="flex items-center justify-between max-w-6xl mx-auto font-display">
